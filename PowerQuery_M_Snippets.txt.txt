@@ -1,0 +1,108 @@
+// ============================================
+// 1. Import Tables
+// ============================================
+let
+    Source = Excel.Workbook(File.Contents("C:\path\to\AdventureWorksDW2020.xlsx"), null, true),
+    Sales    = Source{[Name="Sales"]}[Content],
+    Products = Source{[Name="Products"]}[Content],
+    Customers= Source{[Name="Customers"]}[Content],
+    Dates    = Source{[Name="Dates"]}[Content],
+    Geography= Source{[Name="SalesTerritory"]}[Content]
+in
+    Source
+
+// ============================================
+// 2. Rename Columns
+// ============================================
+Table.RenameColumns(Sales, {
+    {"Customer ID", "CustomerID"},
+    {"Product ID", "ProductID"}
+})
+
+// ============================================
+// 3. Assign Data Types
+// ============================================
+// Sales Table
+Table.TransformColumnTypes(Sales, {
+    {"OrderDate", type date},
+    {"SalesAmount", Currency.Type},
+    {"TotalProductionCost", Currency.Type},
+    {"ProductionStandardCost", Currency.Type},
+    {"UnitPrice", Currency.Type},
+    {"ExtendedAmount", Currency.Type},
+    {"OrderQuantity", Int64.Type},
+    {"Quantity", Int64.Type},
+    {"CustomerID", type text},
+    {"ProductID", type text}
+})
+
+// ============================================
+// 4. Handle Nulls (<5%)
+// ============================================
+Table.ReplaceValue(Sales, null, Number.RoundDown(List.Median(Sales[Quantity])), Replacer.ReplaceValue, {"Quantity"})
+Table.SelectRows(Sales, each [CustomerID] <> null and [City] <> null)
+
+// ============================================
+// 5. Merge Products into Sales (Cost)
+// ============================================
+let
+    Merged = Table.NestedJoin(Sales, {"ProductID"}, Products, {"ProductID"}, "Products", JoinKind.LeftOuter),
+    Expanded = Table.ExpandTableColumn(Merged, "Products", {"Cost"}, {"Cost"})
+in
+    Expanded
+
+// ============================================
+// 6. Profit Column
+// ============================================
+Table.AddColumn(Expanded, "Profit", each [SalesAmount] - ([Quantity] * [Cost]), Currency.Type)
+
+// ============================================
+// 7. Customer Name Split
+// ============================================
+let
+    SplitNames = Table.SplitColumn(Customers, "FullName", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"FirstName", "LastName"})
+in
+    SplitNames
+
+// ============================================
+// 8. Sales Category Band
+// ============================================
+Table.AddColumn(Expanded, "SalesCategory", each 
+    if [SalesAmount] > 1000 then "High" 
+    else if [SalesAmount] >= 500 then "Medium" 
+    else "Low", type text)
+
+// ============================================
+// 9. Remove Duplicates 
+// ============================================
+Table.Distinct(Sales)
+
+// ============================================
+// 10. Filter Sales for Date >= 2018
+// ============================================
+Table.SelectRows(Expanded, each Date.Year([OrderDate]) >= 2018)
+
+// ============================================
+// 11. Aggregation by Year, Month
+// ============================================
+let
+    WithDate = Table.NestedJoin(Sales, {"OrderDate"}, Dates, {"Date"}, "Dates", JoinKind.LeftOuter),
+    ExpandedDates = Table.ExpandTableColumn(WithDate, "Dates", {"Year","Month"}, {"Year","Month"}),
+    Grouped = Table.Group(ExpandedDates, {"Year","Month"}, {
+        {"Total Sales", each List.Sum([SalesAmount]), type number},
+        {"Average Quantity", each List.Average([Quantity]), type number}
+    })
+in
+    Grouped
+
+// ============================================
+// 12. Outlier Detection (P99)
+// ============================================
+let
+    Sorted = Table.Sort(Sales, {{"SalesAmount", Order.Descending}}),
+    CountRows = Table.RowCount(Sorted),
+    P99Row = Number.RoundDown(CountRows * 0.99),
+    Threshold = Sorted{P99Row}[SalesAmount],
+    Outliers = Table.SelectRows(Sorted, each [SalesAmount] > Threshold)
+in
+    Outliers
