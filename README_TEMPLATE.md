@@ -1,16 +1,24 @@
 // ============================================
+
 // PowerBI Practical Exam – [Mitchelle Moraa]
+
 // ============================================
 
 // ============================================
+
 // 1. Overview
+
 // ============================================
+
   This project presents a data-driven sales performance dashboard developed using the AdventureWorksDW2020 dataset. The dashboard aims to uncover profit drivers, market trends, and customer behavior, providing actionable insights for decision-making. 
   Key objectives included identifying top-performing products, analyzing customer segments, and assessing geographic sales distribution to guide strategic growth.
 
 // ============================================
+
 // 2. Dataset & Preparation
+
 // ============================================
+
   Source: AdventureWorksDW2020
   Fact table: Sales , Products, Customers, Dates, Sales Territory
   Cleaning steps:
@@ -19,9 +27,9 @@
   - Removed duplicates
   - categorized sales by product line, subcategory, and region
 
-  ## Power Query
+   Power Query
 
- <p align="center">
+ <p 
   <img src="Screenshots/PowerQueryScreenshot/Sales%20(3).png.jpg" width="300"/>
   <img src="Screenshots/PowerQueryScreenshot/Customer.png.jpg" width="300"/>
   <img src="Screenshots/PowerQueryScreenshot/Product%20(2).jpg" width="300"/>
@@ -29,8 +37,11 @@
 
 
 // ============================================
+
 // 3. Methodology
+
 // ============================================
+
   - ETL: Power Query for data extraction, cleaning, and transformation
   - Data Model: Star schema design with optimized relationships between fact and dimension tables
   - KPI Calculations: Advanced measures in DAX including Year-over-Year (YoY) growth, Running Totals, and Customer Lifetime Value (CLV)
@@ -48,37 +59,39 @@
   - Bookmarks and synchronized slicers for cross-filtering
   - Bubble maps, bar charts, and line graphs to highlight trends
 
-  ##VisualsGallery
+  VisualsGallery
  
  <p align="center">
-  <img src="Screenshots/VisualsGallery/BarChartTop7Products.jpg" width="250"/>
-  <img src="Screenshots/VisualsGallery/BubbleChart.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/BarChartTop7Products.jpg" width="250" style="margin-right:15px"/>
+  <img src="Screenshots/VisualsGallery/BubbleChart.jpg" width="250" style="margin-right:15px"/>
   <img src="Screenshots/VisualsGallery/DecompositionTree.jpg" width="250"/>
  </p>
 
  <p align="center">
-  <img src="Screenshots/VisualsGallery/KPICard.jpg" width="250"/>
-  <img src="Screenshots/VisualsGallery/LineChartOfTotalSalesByMonth.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/KPICard.jpg" width="250" style="margin-right:15px"/>
+  <img src="Screenshots/VisualsGallery/LineChartOfTotalSalesByMonth.jpg" width="250" style="margin-right:15px"/>
   <img src="Screenshots/VisualsGallery/MapVisual.jpg" width="250"/>
  </p>
 
  <p align="center">
-  <img src="Screenshots/VisualsGallery/PieChartTotalSalesByCategory.jpg" width="250"/>
-  <img src="Screenshots/VisualsGallery/ProfitMarginGauge.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/PieChartTotalSalesByCategory.jpg" width="250" style="margin-right:15px"/>
+  <img src="Screenshots/VisualsGallery/ProfitMarginGauge.jpg" width="250" style="margin-right:15px"/>
   <img src="Screenshots/VisualsGallery/ScatterPlot.jpg" width="250"/>
  </p>
- 
-  ## Report Pages
 
- <p align="center">
-  <img src="Screenshots/ReportPages/CustomerInsights.jpg" width="300"/>
-  <img src="Screenshots/ReportPages/ProductAnalysis.jpg" width="300"/>
-  <img src="Screenshots/ReportPages/SalesOverview.jpg" width="300"/>
- </p>
  
-  ## Dashboard
+  Report Pages
 
- <p align="center">
+ ![Customer Insights](Screenshots/ReportPages/CustomerInsights.jpg)
+
+ ![Product Analysis](Screenshots/ReportPages/ProductAnalysis.jpg)
+
+ ![Sales Overview](Screenshots/ReportPages/SalesOverview.jpg)
+
+ 
+  Dashboard
+
+ <p
   <img src="Screenshots/DASHBOARD/001.jpg" width="300"/>
   <img src="Screenshots/DASHBOARD/002.jpg" width="300"/>
   <img src="Screenshots/DASHBOARD/003.jpg" width="300"/>
@@ -93,8 +106,11 @@
 
 
 // ============================================
+
 // 4. Key Insights
+
 // ============================================
+
    Electronics account for ~38% of total sales, but only ~25% of overall profit, suggesting opportunities for pricing or cost optimization.
 
    Bikes and Accessories, while smaller in sales volume (~15–20%), contribute disproportionately to profit (~30%), indicating high-margin opportunities.
@@ -116,8 +132,11 @@
    Large-value orders with few items suggest premium product purchases
 
 // ============================================
+
 // 5. Challenges & Solutions
+
 // ============================================
+
  Challenge: Complex KPI calculations
  Solution: Used DAX time intelligence functions 
 
@@ -131,16 +150,22 @@
  Solution: Imputed missing values with defaults or categorized as “Unknown” to maintain analysis integrity
 
 // ============================================
+
 // 6. Assumptions & Limitations
+
 // ============================================
+
   - Forecast assumes linear growth without advanced predictive modeling
   - Profit margin based on current cost no variable cost modeling
   - Customer Lifetime Value (CLV) assumes constant retention rate and does not account for churn or acquisition costs.
 
 
 // ============================================
+
 // 7. Deliverables
+
 // ============================================
+
   - .pbix file: PowerBI_Practical_Exam_MitchelleMoraa.pbix
   - PDF Export: Report.pdf/Product Trend.pdf
   - Power BI Service Link: https://app.powerbi.com/reportEmbed?reportId=62590844-c7f6-40d4-8678-385409d6d612&autoAuth=true&ctid=16d83ee6-254a-469d-a6cc-54e2ca2313e7
