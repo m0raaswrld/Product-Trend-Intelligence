@@ -19,10 +19,15 @@
   - Removed duplicates
   - categorized sales by product line, subcategory, and region
 
-  ![Power Query Editor](Screenshots/PowerQueryScreenshot.png)
+  ## 🛠 Power Query
+
+ <p align="center">
+  <img src="Screenshots/PowerQueryScreenshot/Sales%20(3).png.jpg" width="300"/>
+  <img src="Screenshots/PowerQueryScreenshot/Customer.png.jpg" width="300"/>
+  <img src="Screenshots/PowerQueryScreenshot/Product%20(2).jpg" width="300"/>
+ </p>
 
 
-  
 // ============================================
 // 3. Methodology
 // ============================================
@@ -30,7 +35,11 @@
   - Data Model: Star schema design with optimized relationships between fact and dimension tables
   - KPI Calculations: Advanced measures in DAX including Year-over-Year (YoY) growth, Running Totals, and Customer Lifetime Value (CLV)
   
-  ![Model View](Screenshots/ModelView.png)
+  ![Star Schema](Screenshots/ModelView/StarSchema1.jpg)
+
+  ![Star Schema 2](Screenshots/ModelView/StarSchema2.jpg)
+
+  ![Star Schema 3](Screenshots/ModelView/StarSchema3.jpg)
 
 
  Visualizations:
@@ -39,10 +48,48 @@
   - Bookmarks and synchronized slicers for cross-filtering
   - Bubble maps, bar charts, and line graphs to highlight trends
 
-  ![VisualsGallery](Screenshots/VisualsGallery.png)
-  ![ReportPages](Screenshots/ReportPages.png)
-  ![Dashboard](Screenshots/DASHBOARD.png)
-  ![RLS](Screenshots/RLS.png)
+  ##VisualsGallery
+ 
+ <p align="center">
+  <img src="Screenshots/VisualsGallery/BarChartTop7Products.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/BubbleChart.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/DecompositionTree.jpg" width="250"/>
+ </p>
+
+ <p align="center">
+  <img src="Screenshots/VisualsGallery/KPICard.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/LineChartOfTotalSalesByMonth.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/MapVisual.jpg" width="250"/>
+ </p>
+
+ <p align="center">
+  <img src="Screenshots/VisualsGallery/PieChartTotalSalesByCategory.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/ProfitMarginGauge.jpg" width="250"/>
+  <img src="Screenshots/VisualsGallery/ScatterPlot.jpg" width="250"/>
+ </p>
+ 
+  ## Report Pages
+
+ <p align="center">
+  <img src="Screenshots/ReportPages/CustomerInsights.jpg" width="300"/>
+  <img src="Screenshots/ReportPages/ProductAnalysis.jpg" width="300"/>
+  <img src="Screenshots/ReportPages/SalesOverview.jpg" width="300"/>
+ </p>
+ 
+  ## Dashboard
+
+ <p align="center">
+  <img src="Screenshots/DASHBOARD/001.jpg" width="300"/>
+  <img src="Screenshots/DASHBOARD/002.jpg" width="300"/>
+  <img src="Screenshots/DASHBOARD/003.jpg" width="300"/>
+ </p>
+
+  ## Row-Level Security (RLS)
+
+ <p align="center">
+  <img src="Screenshots/RLS/RLS.jpg" width="500"/>
+ </p>
+
 
 
 // ============================================
@@ -95,9 +142,6 @@
 // 7. Deliverables
 // ============================================
   - .pbix file: PowerBI_Practical_Exam_MitchelleMoraa.pbix
-  - PDF Export: Sales_Report.pdf
+  - PDF Export: Report.pdf/Product Trend.pdf
   - Power BI Service Link: https://app.powerbi.com/reportEmbed?reportId=62590844-c7f6-40d4-8678-385409d6d612&autoAuth=true&ctid=16d83ee6-254a-469d-a6cc-54e2ca2313e7
-  - Screenshots:
-  - Sales Overview: ./screenshots/sales_overview.png
-  - Product Analysis: ./screenshots/product_analysis.png
-
+  - Screenshots
