@@ -21,7 +21,7 @@
 
    Power Query
 
- <p 
+ <p align="center">
   <img src="Screenshots/PowerQueryScreenshot/Sales%20(3).png.jpg" width="250"/>
  <img src="Screenshots/PowerQueryScreenshot/Customer.png.jpg" width="250"/>
  <img src="Screenshots/PowerQueryScreenshot/Product%20(2).jpg" width="250"/>
@@ -78,9 +78,9 @@
  
   Dashboard
 
- <p>
-  <img src="Screenshots/DASHBOARD/001.jpg" width="300" style="margin-right:15px"/>
-  <img src="Screenshots/DASHBOARD/002.jpg" width="300" style="margin-right:15px"/>
+ <p align="center">
+  <img src="Screenshots/DASHBOARD/001.jpg" width="300"/>
+  <img src="Screenshots/DASHBOARD/002.jpg" width="300"/>
   <img src="Screenshots/DASHBOARD/003.jpg" width="300"/>
  </p>
 
