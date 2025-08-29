@@ -1,23 +1,23 @@
-// ============================================
+ ============================================
 
-// PowerBI Practical Exam – [Mitchelle Moraa]
+ PowerBI Practical Exam – [Mitchelle Moraa]
 
-// ============================================
+ ============================================
 
-// ============================================
+ ============================================
 
-// 1. Overview
+ 1. Overview
 
-// ============================================
+ ============================================
 
   This project presents a data-driven sales performance dashboard developed using the AdventureWorksDW2020 dataset. The dashboard aims to uncover profit drivers, market trends, and customer behavior, providing actionable insights for decision-making. 
   Key objectives included identifying top-performing products, analyzing customer segments, and assessing geographic sales distribution to guide strategic growth.
 
-// ============================================
+ ============================================
 
-// 2. Dataset & Preparation
+ 2. Dataset & Preparation
 
-// ============================================
+ ============================================
 
   Source: AdventureWorksDW2020
   Fact table: Sales , Products, Customers, Dates, Sales Territory
@@ -36,11 +36,11 @@
  </p>
 
 
-// ============================================
+ ============================================
 
-// 3. Methodology
+ 3. Methodology
 
-// ============================================
+ ============================================
 
   - ETL: Power Query for data extraction, cleaning, and transformation
   - Data Model: Star schema design with optimized relationships between fact and dimension tables
@@ -91,7 +91,7 @@
  
   Dashboard
 
- <p
+ <p align="center">
   <img src="Screenshots/DASHBOARD/001.jpg" width="300"/>
   <img src="Screenshots/DASHBOARD/002.jpg" width="300"/>
   <img src="Screenshots/DASHBOARD/003.jpg" width="300"/>
@@ -105,11 +105,11 @@
 
 
 
-// ============================================
+ ============================================
 
-// 4. Key Insights
+ 4. Key Insights
 
-// ============================================
+ ============================================
 
    Electronics account for ~38% of total sales, but only ~25% of overall profit, suggesting opportunities for pricing or cost optimization.
 
@@ -131,11 +131,11 @@
 
    Large-value orders with few items suggest premium product purchases
 
-// ============================================
+ ============================================
 
-// 5. Challenges & Solutions
+ 5. Challenges & Solutions
 
-// ============================================
+ ============================================
 
  Challenge: Complex KPI calculations
  Solution: Used DAX time intelligence functions 
@@ -149,22 +149,22 @@
  Challenge: Handling nulls in customer demographic data
  Solution: Imputed missing values with defaults or categorized as “Unknown” to maintain analysis integrity
 
-// ============================================
+ ============================================
 
-// 6. Assumptions & Limitations
+ 6. Assumptions & Limitations
 
-// ============================================
+ ============================================
 
   - Forecast assumes linear growth without advanced predictive modeling
   - Profit margin based on current cost no variable cost modeling
   - Customer Lifetime Value (CLV) assumes constant retention rate and does not account for churn or acquisition costs.
 
 
-// ============================================
+ ============================================
 
-// 7. Deliverables
+ 7. Deliverables
 
-// ============================================
+ ============================================
 
   - .pbix file: PowerBI_Practical_Exam_MitchelleMoraa.pbix
   - PDF Export: Report.pdf/Product Trend.pdf
