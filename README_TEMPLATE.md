@@ -23,8 +23,8 @@
 
  <p 
   <img src="Screenshots/PowerQueryScreenshot/Sales%20(3).png.jpg" width="250"/>
-  <img src="Screenshots/PowerQueryScreenshot/Customer.png.jpg" width="250"/>
-  <img src="Screenshots/PowerQueryScreenshot/Product%20(2).jpg" width="250"/>
+ <img src="Screenshots/PowerQueryScreenshot/Customer.png.jpg" width="250"/>
+ <img src="Screenshots/PowerQueryScreenshot/Product%20(2).jpg" width="250"/>
  </p>
 
  __Methodology__
