@@ -19,7 +19,7 @@
   - Removed duplicates
   - categorized sales by product line, subcategory, and region
 
-  ## 🛠 Power Query
+  ## Power Query
 
  <p align="center">
   <img src="Screenshots/PowerQueryScreenshot/Sales%20(3).png.jpg" width="300"/>
