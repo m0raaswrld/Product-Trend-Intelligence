@@ -78,9 +78,9 @@
  
   Dashboard
 
- <p align="center">
-  <img src="Screenshots/DASHBOARD/001.jpg" width="300"/>
-  <img src="Screenshots/DASHBOARD/002.jpg" width="300"/>
+ <p>
+  <img src="Screenshots/DASHBOARD/001.jpg" width="300" style="margin-right:15px"/>
+  <img src="Screenshots/DASHBOARD/002.jpg" width="300" style="margin-right:15px"/>
   <img src="Screenshots/DASHBOARD/003.jpg" width="300"/>
  </p>
 
