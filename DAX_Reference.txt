@@ -26,7 +26,7 @@ RANKX(ALL(Products[ProductName]), [Total Sales], , DESC)
 // 4. Customer Retention Rate
 // ============================================
 // Assumes Dates[Year] is text like "FY2020"
-Retention Rate =
+Customer Retention Rate =
 DIVIDE(
     CALCULATE(
         DISTINCTCOUNT(Customer[Customer ID]),
@@ -39,16 +39,108 @@ DIVIDE(
 )
 
 // ============================================
-// 5. Contribution Margin %
+// 5. CRR 3M Avg
 // ============================================
-Contribution Margin % = DIVIDE([Profit], [SalesAmount])
+CRR 3M Avg =  
+CALCULATE(
+    [Customer Retention Rate],
+    DATESINPERIOD(
+        'Date'[Date],       
+        LASTDATE('Date'[Date]), 
+        -3,                 
+        MONTH
+    )
+)
 
 // ============================================
-// 6. RLS Roles
+// 6. Contribution Margin %
 // ============================================
+Contribution Margin % = DIVIDE(Merge1[Total Profit], Sales[Total Sales])
 
-// US Manager
-[Country] = "United States"
+// ============================================
+// 7. Total Profit
+// ============================================
+Total Profit = SUM(Merge1[Profit])
 
-// Europe Manager
-[Country] IN {"France","Germany","Italy", ...}
+// ============================================
+// 8. Average Order Value
+// ============================================
+Average Order Value = DIVIDE(SUM(Sales[SalesAmount]), COUNTROWS(Sales))
+
+// ============================================
+// 9. Avg Profit
+// ============================================
+Avg Profit = AVERAGE('Merge1'[Profit])
+
+// ============================================
+// 10. Avg Qty
+// ============================================
+Avg Qty = AVERAGE('Sales'[OrderQuantity])
+
+// ============================================
+// 11. Budget
+// ============================================
+Budget = SUMX(Sales, 1.2 * RELATED('Product'[StandardCost]) * Sales[OrderQuantity])
+
+// ============================================
+// 12. Customer CLV
+// ============================================
+Customer CLV = 
+CALCULATE(
+    SUM(Sales[ExtendedAmount]),
+    ALLEXCEPT(Sales, Customer[Customer ID])
+)
+
+// ============================================
+// 13. Orders Count
+// ============================================
+Orders Count = COUNTROWS(Sales)
+
+// ============================================
+// 14. Profit Margin %
+// ============================================
+Profit Margin % = DIVIDE(Merge1[Total Profit], Sales[Total Sales])
+
+// ============================================
+// 15. Sales LY
+// ============================================
+Sales LY = 
+CALCULATE(
+    [Total Sales],
+    FILTER(
+        ALL('Date'),
+        'Date'[NumericYear] = MAX('Date'[NumericYear]) - 1
+    )
+)
+
+// ============================================
+// 16. Sales Target
+// ============================================
+Sales Target = [Sales LY] * 1.10
+
+// ============================================
+// 17. Sales YoY %
+// ============================================
+Sales YoY % = 
+VAR _ly = [Sales LY]
+RETURN IF(_ly = 0, BLANK(), DIVIDE([Total Sales]-_ly,_ly))
+
+// ============================================
+// 18. Total Quantity
+// ============================================
+Total Quantity = SUM(Sales[OrderQuantity])
+
+// ============================================
+// 19. Total Sales
+// ============================================
+Total Sales = SUM(Sales[SalesAmount])
+
+// ============================================
+// 20. Variance
+// ============================================
+Variance = [Total Sales] - [Budget]
+
+// ============================================
+// 21. Variance %
+// ============================================
+Variance % = DIVIDE([Variance], [Budget])
