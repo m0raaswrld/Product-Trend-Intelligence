@@ -82,6 +82,8 @@
   <img src="Screenshots/DASHBOARD/001.jpg" width="250"/>
   <img src="Screenshots/DASHBOARD/002.jpg" width="250"/>
   <img src="Screenshots/DASHBOARD/003.jpg" width="250"/>
+  <img src="Screenshots/DASHBOARD/004.jpg" width="250"/>
+  <img src="Screenshots/DASHBOARD/005.jpg" width="250"/>
  </p>
 
   ## Row-Level Security (RLS)
