@@ -79,9 +79,9 @@
   Dashboard
 
  <p align="center">
-  <img src="Screenshots/DASHBOARD/001.jpg" width="300"/>
-  <img src="Screenshots/DASHBOARD/002.jpg" width="300"/>
-  <img src="Screenshots/DASHBOARD/003.jpg" width="300"/>
+  <img src="Screenshots/DASHBOARD/001.jpg" width="250"/>
+  <img src="Screenshots/DASHBOARD/002.jpg" width="250"/>
+  <img src="Screenshots/DASHBOARD/003.jpg" width="250"/>
  </p>
 
   ## Row-Level Security (RLS)
