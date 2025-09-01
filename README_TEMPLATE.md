@@ -97,7 +97,7 @@
    ![Star Schema 3](Screenshots/ModelView/StarSchema3.jpg)
 
 
- Visualizations:
+ __Visualizations:__
 
    This project includes a suite of Power BI dashboards designed to provide actionable insights into customer behavior, product performance, and overall sales trends. Each dashboard integrates dynamic visualizations with data models to support data-driven decision-making.
 
@@ -143,7 +143,7 @@
    - Global Sales Distribution by Country (ISO Code)
    - Running Total Sales by Year and Month
 
-   VisualsGallery
+  __VisualsGallery__
  
    <p align="center">
     <img src="Screenshots/VisualsGallery/BarChartTop7Products.jpg" width="250" style="margin-right:15px"/>
@@ -164,7 +164,7 @@
    </p>
 
  
-  Report Pages
+  __Report Pages__
 
    ![Customer Insights](Screenshots/ReportPages/CustomerInsights.jpg)
 
@@ -173,7 +173,7 @@
    ![Sales Overview](Screenshots/ReportPages/SalesOverview.jpg)
 
  
-  Dashboard
+  __Dashboard__
 
    <p align="center">
     <img src="Screenshots/DASHBOARD/001.jpg" width="250"/>
@@ -200,7 +200,7 @@
    **RLS Rule (DAX):**
 
    [CountryCode] = "FRA" || [CountryCode] = "DEU"
-   ### 1. Europe Manager
+   ### 2. USA Manager
 
    **Role Name:** `US Manager`  
    **Access Scope:** Data related to United States markets
@@ -220,39 +220,39 @@
 
  __Key Insights__
 
-   Electronics account for ~38% of total sales, but only ~25% of overall profit, suggesting opportunities for pricing or cost optimization.
+   - Electronics account for ~38% of total sales, but only ~25% of overall profit, suggesting opportunities for pricing or cost optimization.
 
-   Bikes and Accessories, while smaller in sales volume (~15–20%), contribute disproportionately to profit (~30%), indicating high-margin opportunities.
+   - Bikes and Accessories, while smaller in sales volume (~15–20%), contribute disproportionately to profit (~30%), indicating high-margin opportunities.
 
-   Products with low sales but high profit margins can be prioritized for targeted marketing.
+   - Products with low sales but high profit margins can be prioritized for targeted marketing.
 
-   60% of customers are concentrated in just 3–4 states, highlighting potential for geographic expansion.
+   - 60% of customers are concentrated in just 3–4 states, highlighting potential for geographic expansion.
 
-   High-value customers (annual purchases > $10k) represent ~8–10% of the customer base but generate ~35% of total revenue, this shows that targeting high-value customers is more effective than increasing low-value customer volume.
+   - High-value customers (annual purchases > $10k) represent ~8–10% of the customer base but generate ~35% of total revenue, this shows that targeting high-value customers is more effective than increasing low-value customer volume.
 
-   Low-value customers show a slight decline (~3% YoY), signaling a need for retention strategies.
+   - Low-value customers show a slight decline (~3% YoY), signaling a need for retention strategies.
 
-   Peak sales occur in Q4 (Nov–Dec) and mid-year (July–August).
+   - Peak sales occur in Q4 (Nov–Dec) and mid-year (July–August).
 
-   Discounts and promotions drive temporary spikes in revenue, but often reduce profit margins.
+   - Discounts and promotions drive temporary spikes in revenue, but often reduce profit margins.
 
-   Electronics are typically purchased in single-item orders, while Bikes and Accessories often include multiple items per order.
+   - Electronics are typically purchased in single-item orders, while Bikes and Accessories often include multiple items per order.
 
-   Large-value orders with few items suggest premium product purchases
+   - Large-value orders with few items suggest premium product purchases
 
  __Challenges & Solutions__
 
-   Challenge: Complex KPI calculations
-   Solution: Used DAX time intelligence functions 
+   __Challenge__: Complex KPI calculations
+   __Solution__: Used DAX time intelligence functions 
 
-   Challenge: Category hierarchy gaps
-   Solution: Filled missing subcategories via reference table
+   __Challenge__: Category hierarchy gaps
+   __Solution__: Filled missing subcategories via reference table
 
-   Challenge: Performance with large fact table
-   Solution: Replaced calculated columns with measures
+   __Challenge__: Performance with large fact table
+   __Solution__: Replaced calculated columns with measures
 
-   Challenge: Handling nulls in customer demographic data
-   Solution: Imputed missing values with defaults or categorized as “Unknown” to maintain analysis integrity
+   __Challenge__: Handling nulls in customer demographic data
+   __Solution__: Imputed missing values with defaults or categorized as “Unknown” to maintain analysis integrity
 
  __Assumptions & Limitations__
 
