@@ -79,7 +79,7 @@
  - **Time Intelligence**
    - Marked the Date Dimension as the official **Date Table**.
    - Enabled **hierarchies** (Year → Quarter → Month → Day) for drill-down analysis.
-   - Created supporting calculated columns such as Year-Month and Week Number.
+   - Created supporting calculated columns such as Year-Month
 
  - **Referential Integrity**
    - Ensured all fact table keys had matching records in dimensions 
@@ -97,7 +97,7 @@
    ![Star Schema 3](Screenshots/ModelView/StarSchema3.jpg)
 
 
- __Visualizations:__
+ ## __Visualizations:__
 
    This project includes a suite of Power BI dashboards designed to provide actionable insights into customer behavior, product performance, and overall sales trends. Each dashboard integrates dynamic visualizations with data models to support data-driven decision-making.
 
@@ -243,15 +243,19 @@
  __Challenges & Solutions__
 
    __Challenge__: Complex KPI calculations
+
    __Solution__: Used DAX time intelligence functions 
 
    __Challenge__: Category hierarchy gaps
+
    __Solution__: Filled missing subcategories via reference table
 
    __Challenge__: Performance with large fact table
+
    __Solution__: Replaced calculated columns with measures
 
    __Challenge__: Handling nulls in customer demographic data
+   
    __Solution__: Imputed missing values with defaults or categorized as “Unknown” to maintain analysis integrity
 
  __Assumptions & Limitations__

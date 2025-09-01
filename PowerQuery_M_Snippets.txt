@@ -2,17 +2,31 @@
 // 1. Import Tables
 // ============================================
 let
-    Source = Excel.Workbook(File.Contents("C:\path\to\AdventureWorksDW2020.xlsx"), null, true),
-    Sales    = Source{[Name="Sales"]}[Content],
-    Products = Source{[Name="Products"]}[Content],
-    Customers= Source{[Name="Customers"]}[Content],
-    Dates    = Source{[Name="Dates"]}[Content],
-    Geography= Source{[Name="SalesTerritory"]}[Content]
+    Source    = Excel.Workbook(File.Contents("C:\path\to\AdventureWorksDW2020.xlsx"), null, true),
+    Sales     = Source{[Name="Sales"]}[Content],
+    Products  = Source{[Name="Products"]}[Content],
+    Customers = Source{[Name="Customers"]}[Content],
+    Dates     = Source{[Name="Dates"]}[Content],
+    Geography = Source{[Name="SalesTerritory"]}[Content]
 in
     Source
 
 // ============================================
-// 2. Rename Columns
+// 2. Data Profiling
+// ============================================
+// Count total rows
+Table.RowCount(Sales)
+// Extract column list
+Table.ColumnNames(Sales)
+// Convert columns into structured table for profiling
+Table.FromList(Table.ColumnNames(Sales), Splitter.SplitByNothing(), {"ColumnName"})
+// Count nulls and % nulls
+Table.AddColumn(Sales, "NullCount", each List.Count(List.Select(Record.ToList(_), each _ = null)))
+// Replace NA with null for standardization
+Table.ReplaceValue(Sales, "NA", null, Replacer.ReplaceValue, Table.ColumnNames(Sales))
+
+// ============================================
+// 3. Rename Columns
 // ============================================
 Table.RenameColumns(Sales, {
     {"Customer ID", "CustomerID"},
@@ -20,7 +34,7 @@ Table.RenameColumns(Sales, {
 })
 
 // ============================================
-// 3. Assign Data Types
+// 4. Assign Data Types
 // ============================================
 // Sales Table
 Table.TransformColumnTypes(Sales, {
@@ -37,27 +51,29 @@ Table.TransformColumnTypes(Sales, {
 })
 
 // ============================================
-// 4. Handle Nulls (<5%)
+// 5. Handle Nulls
 // ============================================
+// Replace null Quantity values with Median
 Table.ReplaceValue(Sales, null, Number.RoundDown(List.Median(Sales[Quantity])), Replacer.ReplaceValue, {"Quantity"})
+// Remove rows with critical nulls (CustomerID, City, etc.)
 Table.SelectRows(Sales, each [CustomerID] <> null and [City] <> null)
 
 // ============================================
-// 5. Merge Products into Sales (Cost)
+// 6. Merge Products into Sales (Cost)
 // ============================================
 let
-    Merged = Table.NestedJoin(Sales, {"ProductID"}, Products, {"ProductID"}, "Products", JoinKind.LeftOuter),
+    Merged   = Table.NestedJoin(Sales, {"ProductID"}, Products, {"ProductID"}, "Products", JoinKind.LeftOuter),
     Expanded = Table.ExpandTableColumn(Merged, "Products", {"Cost"}, {"Cost"})
 in
     Expanded
 
 // ============================================
-// 6. Profit Column
+// 7. Profit Column
 // ============================================
 Table.AddColumn(Expanded, "Profit", each [SalesAmount] - ([Quantity] * [Cost]), Currency.Type)
 
 // ============================================
-// 7. Customer Name Split
+// 8. Customer Name Split
 // ============================================
 let
     SplitNames = Table.SplitColumn(Customers, "FullName", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"FirstName", "LastName"})
@@ -65,7 +81,7 @@ in
     SplitNames
 
 // ============================================
-// 8. Sales Category Band
+// 9. Sales Category Band
 // ============================================
 Table.AddColumn(Expanded, "SalesCategory", each 
     if [SalesAmount] > 1000 then "High" 
@@ -73,36 +89,47 @@ Table.AddColumn(Expanded, "SalesCategory", each
     else "Low", type text)
 
 // ============================================
-// 9. Remove Duplicates 
+// 10. Add Index Columns
+// ============================================
+Table.AddIndexColumn(Sales, "Index", 1, 1, Int64.Type)
+
+// ============================================
+// 11. Split Compound Columns (if any)
+// ============================================
+Table.SplitColumn(Geography, "Region-Country", Splitter.SplitTextByDelimiter("-", QuoteStyle.Csv), {"Region","Country"})
+
+// ============================================
+// 12. Remove Duplicates
 // ============================================
 Table.Distinct(Sales)
 
 // ============================================
-// 10. Filter Sales for Date >= 2018
+// 13. Filter Sales for Date >= 2018
 // ============================================
 Table.SelectRows(Expanded, each Date.Year([OrderDate]) >= 2018)
 
 // ============================================
-// 11. Aggregation by Year, Month
+// 14. Aggregation by Year, Month
 // ============================================
 let
-    WithDate = Table.NestedJoin(Sales, {"OrderDate"}, Dates, {"Date"}, "Dates", JoinKind.LeftOuter),
-    ExpandedDates = Table.ExpandTableColumn(WithDate, "Dates", {"Year","Month"}, {"Year","Month"}),
-    Grouped = Table.Group(ExpandedDates, {"Year","Month"}, {
+    WithDate       = Table.NestedJoin(Sales, {"OrderDate"}, Dates, {"Date"}, "Dates", JoinKind.LeftOuter),
+    ExpandedDates  = Table.ExpandTableColumn(WithDate, "Dates", {"Year","Month"}, {"Year","Month"}),
+    Grouped        = Table.Group(ExpandedDates, {"Year","Month"}, {
         {"Total Sales", each List.Sum([SalesAmount]), type number},
-        {"Average Quantity", each List.Average([Quantity]), type number}
+        {"Average Quantity", each List.Average([Quantity]), type number},
+        {"Row Count", each Table.RowCount(_), Int64.Type}
     })
 in
     Grouped
 
 // ============================================
-// 12. Outlier Detection (P99)
+// 15. Outlier Detection (P99)
 // ============================================
 let
-    Sorted = Table.Sort(Sales, {{"SalesAmount", Order.Descending}}),
+    Sorted    = Table.Sort(Sales, {{"SalesAmount", Order.Descending}}),
     CountRows = Table.RowCount(Sorted),
-    P99Row = Number.RoundDown(CountRows * 0.99),
+    P99Row    = Number.RoundDown(CountRows * 0.99),
     Threshold = Sorted{P99Row}[SalesAmount],
-    Outliers = Table.SelectRows(Sorted, each [SalesAmount] > Threshold)
+    Outliers  = Table.SelectRows(Sorted, each [SalesAmount] > Threshold)
 in
     Outliers
