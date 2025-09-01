@@ -242,21 +242,18 @@
 
  __Challenges & Solutions__
 
-   __Challenge__: Complex KPI calculations
+   - **Challenge: Complex KPI Calculations**  
+   - **Solution**: Implemented advanced DAX time intelligence (YoY Growth, Running Totals, CLV) to ensure accurate and scalable performance metrics.  
 
-   __Solution__: Used DAX time intelligence functions 
+   - **Challenge: Category Hierarchy Gaps**  
+   - **Solution**: Resolved missing product subcategories by mapping through a reference dimension table, preserving drill-down analysis.  
 
-   __Challenge__: Category hierarchy gaps
+   - **Challenge: Performance with Large Fact Table**  
+   - **Solution**: Optimized model by replacing calculated columns with DAX measures and disabling staging queries, improving refresh speed and query efficiency.  
 
-   __Solution__: Filled missing subcategories via reference table
+   - **Challenge: Nulls in Customer Demographics**  
+   - **Solution**: Applied Power Query transformations to impute missing data with defaults or categorize as **“Unknown”**, ensuring completeness without biasing insights.  
 
-   __Challenge__: Performance with large fact table
-
-   __Solution__: Replaced calculated columns with measures
-
-   __Challenge__: Handling nulls in customer demographic data
-   
-   __Solution__: Imputed missing values with defaults or categorized as “Unknown” to maintain analysis integrity
 
  __Assumptions & Limitations__
 
