@@ -270,5 +270,5 @@
 
    - .pbix file: PowerBI_Practical_Exam_MitchelleMoraa.pbix
    - PDF Export: Report.pdf/Product Trend.pdf
-   - Power BI Service Link: https://app.powerbi.com/reportEmbed?reportId=62590844-c7f6-40d4-8678-385409d6d612&autoAuth=true&ctid=16d83ee6-254a-469d-a6cc-54e2ca2313e7
+   - Power BI Service Link: https://app.powerbi.com/reportEmbed?reportId=c93a917d-d4c1-4090-b57d-b8603d073f12&autoAuth=true&ctid=16d83ee6-254a-469d-a6cc-54e2ca2313e7
    - Screenshots
