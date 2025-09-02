@@ -220,25 +220,49 @@
 
  __Key Insights__
 
-   - Electronics account for ~38% of total sales, but only ~25% of overall profit, suggesting opportunities for pricing or cost optimization.
+   ##  **Customer Insights:**
+   - Total CLV: `$110.34M`
+   - Average Order Value: `$905.62`
+   
+   Indicates high customer purchasing power and strong monetization. Market should monetize customer loyalty by upselling and cross-selling to high CLV customers and consider loyalty programs or premium tiers.
 
-   - Bikes and Accessories, while smaller in sales volume (~15–20%), contribute disproportionately to profit (~30%), indicating high-margin opportunities.
+   ## **Profitability Concerns**: 
+   - Most customers have **flat profit margins (0.63%)**
+   - Overall monthly profit trends are negative despite high sales volumes.
+   - **Profit Margin % by Category**:
+      Accessories: `-1.6%`
+      Components: `-2.4%`
+      Bikes: `-2.6%`
+      Clothing: `-5.4%`
+   - High volume products (e.g. *Mountain-200 Black*) are **not profitable**
+   - Business is pursuing a **volume-over-margin strategy** that may not be sustainable.
+   - **Overall Profitability**:
+   - Total Profit Margin: `-2.59%`
 
-   - Products with low sales but high profit margins can be prioritized for targeted marketing.
+   Indicates a need to conduct product-level profitability reviews, re-price and refine Product Portfolio by focusing on products with positive margins and discontinue chronically unprofitable SKUs.
 
-   - 60% of customers are concentrated in just 3–4 states, highlighting potential for geographic expansion.
+   - **Regional Sales Performance**:
+   - Top: Southwest USA, Canada
+   - Underperforming: Australia, despite being the customer base focus.
 
-   - High-value customers (annual purchases > $10k) represent ~8–10% of the customer base but generate ~35% of total revenue, this shows that targeting high-value customers is more effective than increasing low-value customer volume.
+   ## Sales Figures Report
 
-   - Low-value customers show a slight decline (~3% YoY), signaling a need for retention strategies.
+   - **Sales Growth**:
+   - This Year’s Sales: `$110M`
+   - Last Year’s Sales: `$52M`
+   - YoY Growth: `1.12` (112%)
+   - Exceeded Sales Target: `$109.8M vs $57.07M` (+92.42%)
 
-   - Peak sales occur in Q4 (Nov–Dec) and mid-year (July–August).
+   - **Geographical Performance**:
+   - Strongest markets: USA, Canada, Germany
+   - Profitability varies by region despite good sales volume.
+   - USA contributed 75.80% of global revenue with a 1.41% YoY growth, while Europe grew only 0.45%, suggesting stronger demand in the U.S. market.
+   - Profit margins remain negative across regions. Europe -2.99% is under slightly higher pressure than the U.S. -2.32%, indicating that both markets require to address profitability drivers
 
-   - Discounts and promotions drive temporary spikes in revenue, but often reduce profit margins.
+   Indicates a need to optimize Regional Strategy by increasing investment in high-performing regions (Canada) and reassess Australian market approach to focus on profit and not just volume.
 
-   - Electronics are typically purchased in single-item orders, while Bikes and Accessories often include multiple items per order.
+   While revenue and customer loyalty are strong, **profitability is the key challenge**. A pivot toward **value-driven growth**, supported by smarter pricing and cost controls, is necessary for sustainable success.
 
-   - Large-value orders with few items suggest premium product purchases
 
  __Challenges & Solutions__
 
