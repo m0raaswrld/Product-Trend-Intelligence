@@ -225,6 +225,7 @@
    - Average Order Value: `$905.62`
 
    **Indicates high customer purchasing power and strong monetization. Market should monetize customer loyalty by upselling and cross-selling to high CLV customers and consider loyalty programs or premium tiers.**
+---
 
    **Profitability Concerns** : 
    - Most customers have flat profit margins (0.63%)
@@ -240,10 +241,7 @@
    - Overall Profitability: Total Profit Margin: `-2.59%`
 
    **Indicates a need to conduct product-level profitability reviews, re-price and refine Product Portfolio by focusing on products with positive margins and discontinue chronically unprofitable SKUs.**
-
-    **Regional Sales Performance**:
-   - Top: Southwest USA, Canada
-   - Underperforming: Australia, despite being the customer base focus.
+---
 
    **Sales Figures Report**
 
@@ -255,13 +253,16 @@
 
    **Geographical Performance** :
    - Strongest markets: USA, Canada, Germany
+   - Underperforming: Australia, despite being the customer base focus.
    - Profitability varies by region despite good sales volume.
    - USA contributed 75.80% of global revenue with a 1.41% YoY growth, while Europe grew only 0.45%, suggesting stronger demand in the U.S. market.
    - Profit margins remain negative across regions. Europe -2.99% is under slightly higher pressure than the U.S. -2.32%, indicating that both markets require to address profitability drivers
 
    **Indicates a need to optimize Regional Strategy by increasing investment in high-performing regions (Canada) and reassess Australian market approach to focus on profit and not just volume.**
+---
 
    **While revenue and customer loyalty are strong, **profitability is the key challenge**. A pivot toward **value-driven growth**, supported by smarter pricing and cost controls, is necessary for sustainable success.**
+---
 
 
  __Challenges & Solutions__
