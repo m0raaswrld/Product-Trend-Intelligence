@@ -218,42 +218,42 @@
     <img src="Screenshots/RLS/RLS USA (iii).jpg" width="300"/>
    </p>
 
- __Key Insights__
+## __Key Insights__
 
-   ##  **Customer Insights:**
+   **Customer Insights:**
    - Total CLV: `$110.34M`
    - Average Order Value: `$905.62`
-   
+
    Indicates high customer purchasing power and strong monetization. Market should monetize customer loyalty by upselling and cross-selling to high CLV customers and consider loyalty programs or premium tiers.
 
-   ## **Profitability Concerns**: 
+    **Profitability Concerns**: 
    - Most customers have **flat profit margins (0.63%)**
    - Overall monthly profit trends are negative despite high sales volumes.
    - **Profit Margin % by Category**:
+
       Accessories: `-1.6%`
       Components: `-2.4%`
       Bikes: `-2.6%`
       Clothing: `-5.4%`
    - High volume products (e.g. *Mountain-200 Black*) are **not profitable**
    - Business is pursuing a **volume-over-margin strategy** that may not be sustainable.
-   - **Overall Profitability**:
-   - Total Profit Margin: `-2.59%`
+   - **Overall Profitability**: Total Profit Margin: `-2.59%`
 
    Indicates a need to conduct product-level profitability reviews, re-price and refine Product Portfolio by focusing on products with positive margins and discontinue chronically unprofitable SKUs.
 
-   - **Regional Sales Performance**:
+    **Regional Sales Performance**:
    - Top: Southwest USA, Canada
    - Underperforming: Australia, despite being the customer base focus.
 
-   ## Sales Figures Report
+   **Sales Figures Report**
 
-   - **Sales Growth**:
+    **Sales Growth**:
    - This Year’s Sales: `$110M`
    - Last Year’s Sales: `$52M`
    - YoY Growth: `1.12` (112%)
    - Exceeded Sales Target: `$109.8M vs $57.07M` (+92.42%)
 
-   - **Geographical Performance**:
+    **Geographical Performance**:
    - Strongest markets: USA, Canada, Germany
    - Profitability varies by region despite good sales volume.
    - USA contributed 75.80% of global revenue with a 1.41% YoY growth, while Europe grew only 0.45%, suggesting stronger demand in the U.S. market.
@@ -261,7 +261,7 @@
 
    Indicates a need to optimize Regional Strategy by increasing investment in high-performing regions (Canada) and reassess Australian market approach to focus on profit and not just volume.
 
-   While revenue and customer loyalty are strong, **profitability is the key challenge**. A pivot toward **value-driven growth**, supported by smarter pricing and cost controls, is necessary for sustainable success.
+   **While revenue and customer loyalty are strong, **profitability is the key challenge**. A pivot toward **value-driven growth**, supported by smarter pricing and cost controls, is necessary for sustainable success.**
 
 
  __Challenges & Solutions__
